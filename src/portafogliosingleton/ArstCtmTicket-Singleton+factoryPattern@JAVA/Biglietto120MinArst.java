@@ -11,4 +11,6 @@ package portafogliosingleton;
  */
 public class Biglietto120MinArst extends Biglietto120Min{
     
+     
+    
 }

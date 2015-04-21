@@ -13,4 +13,5 @@ public interface AbstractFactoryBiglietti {
 
     public Biglietto90Min CreaBiglietto90Min();
     public Biglietto120Min CreaBiglietto120Min();
+    public String getMin(String min);
 }

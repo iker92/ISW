@@ -8,4 +8,10 @@ package portafogliosingleton;
 
 public class Biglietto90MinArst extends Biglietto90Min {
     
+      public String toString(){
+    
+    return "Biglietto 90Min Arst";
+    }
+    
+    
 }

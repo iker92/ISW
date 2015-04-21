@@ -10,7 +10,8 @@ import java.util.*;
 import java.lang.*;
 
 public class ConsoleApplication {
-   
+    public static String ticketMinType;
+   public static PortafoglioSingleton portafoglio=PortafoglioSingleton.getInstance();
     public static void main(String[] args) {
         
         boolean flag=true;
@@ -38,25 +39,41 @@ public class ConsoleApplication {
            
               System.out.println("Quale biglietto vuoi acquistare? 1) 90Min 2) 120Min");
               String ticketMin;
-              String ticketMinType;
+              
               Scanner scanTicket = new Scanner(System.in);
               ticketMin= scanTicket.nextLine();
               
-              if (ticketMin.equals("1")){ ticketMinType="90Min";}
-              else if (ticketMin.equals("2")){ ticketMinType="120Min";}
+              if (ticketMin.equals("1")){ ticketMinType="90Min"; biglietti.getMin(ticketMinType);}
+              else if (ticketMin.equals("2")){ticketMinType="120Min"; biglietti.getMin(ticketMinType);}
               else ticketMinType="";
                
-               Biglietto bigliettiMin =FactoryBiglietti.getTicketMin(ticketMin);
-               PortafoglioSingleton.addBiglietto(biglietti);}
+            
+               portafoglio.addBiglietto(biglietti);}
                
          
         if (cosaDaleggere.equals("no"))
-       { flag=false;   } }
+       { flag=false;   }
+        
+      
+                            }
         Scanner scn=new Scanner(System.in);
         scn.close();
-       int i=PortafoglioSingleton.lista.size();
+       int i=portafoglio.lista.size();
        System.out.println(i);
        
+         int j=0;
+       while(j< portafoglio.lista.size()){
+       
+       System.out.println(portafoglio.lista.get(j).toString());
+       
+       j++;
+               
+       
+               
+       }
+       
+       
+    
 }
 }
 

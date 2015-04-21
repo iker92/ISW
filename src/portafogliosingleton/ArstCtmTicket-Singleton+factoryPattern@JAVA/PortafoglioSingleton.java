@@ -19,11 +19,11 @@ public class PortafoglioSingleton{
         return portafoglio; 
         }
         
-    public static ArrayList<AbstractFactoryBiglietti> lista=new ArrayList<AbstractFactoryBiglietti>();
+    public  ArrayList<AbstractFactoryBiglietti> lista=new ArrayList<AbstractFactoryBiglietti>();
     
     
-       public static void addBiglietto(AbstractFactoryBiglietti bigl){
-        lista.add(bigl);
+       public  void addBiglietto(AbstractFactoryBiglietti bigl){
+        this.lista.add(bigl);
     }
     
     }
