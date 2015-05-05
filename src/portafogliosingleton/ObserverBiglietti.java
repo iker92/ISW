@@ -14,28 +14,25 @@ import java.util.Observer;
  *
  * @author Alessio
  */
-public class ObserverBiglietti implements Observer{
-    
-    ArrayList<Observer> obList=new ArrayList<Observer>();
-    
+public class ObserverBiglietti implements Observer {
+
+    ArrayList<Observer> obList = new ArrayList<Observer>();
+
     @Override
-    public String toString(){
-    return "Biglietto";
+    public String toString() {
+        return "Biglietto";
     }
-    
-    
-    public void update(Observable o,Object arg){
-        
-        if(arg!=null){
-        int num=(int) arg;
-        if(num==0){
-        System.out.println("Hai finito i biglietti");}
-        
+
+    public void update(Observable o, Object arg) {
+
+        if (arg != null) {
+            int num = (int) arg;
+            if (num == 0) {
+                System.out.println("Hai finito i biglietti");
+            }
+
         }
-            
-       
+
     }
-    
-    
-   
+
 }

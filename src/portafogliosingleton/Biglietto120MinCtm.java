@@ -9,11 +9,11 @@ package portafogliosingleton;
  *
  * @author HP-Paviliong6
  */
-public class Biglietto120MinCtm extends Biglietto120Min{
-    
-      public String toString(){
-    
-    return "Biglietto 120Min Ctm";
+public class Biglietto120MinCtm extends Biglietto120Min {
+
+    public String toString() {
+
+        return "Biglietto 120Min Ctm";
     }
-    
+
 }

@@ -9,6 +9,6 @@ package portafogliosingleton;
  *
  * @author HP-Paviliong6
  */
-public class Biglietto120Min extends Biglietto{
-    
+public class Biglietto120Min extends Biglietto {
+
 }

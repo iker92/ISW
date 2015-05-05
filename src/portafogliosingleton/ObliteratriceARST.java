@@ -10,25 +10,25 @@ import java.util.Calendar;
  *
  * @author Alessio
  */
-public class ObliteratriceARST implements Obliteratrice{
-Obliteratrice next=null;
+public class ObliteratriceARST implements Obliteratrice {
+
+    Obliteratrice next = null;
+
     @Override
     public String Oblitera(Biglietto b) {
-         if (b instanceof Biglietto90MinArst || b instanceof Biglietto120MinArst){
-        Calendar now = Calendar.getInstance();
-        return "Arst: " +now.get(Calendar.HOUR_OF_DAY) + ":" + now.get(Calendar.MINUTE);}//To change body of generated methods, choose Tools | Templates.
-    
-else if (next!=null)
-        {
+        if (b instanceof Biglietto90MinArst || b instanceof Biglietto120MinArst) {
+            Calendar now = Calendar.getInstance();
+            return "Arst: " + now.get(Calendar.HOUR_OF_DAY) + ":" + now.get(Calendar.MINUTE);
+        }//To change body of generated methods, choose Tools | Templates.
+        else if (next != null) {
             return next.Oblitera(b);
         }
-        return "non posso gestirlo";
+        return "Non posso gestirlo";
     }
-    
+
     @Override
     public void SetNext(Obliteratrice o) {
-        this.next=o;
+        this.next = o;
     }
-    
-}
 
+}

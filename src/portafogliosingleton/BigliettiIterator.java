@@ -11,21 +11,20 @@ import java.util.List;
  *
  * @author Alessio
  */
-public class BigliettiIterator implements java.util.Iterator<Biglietto>{
-    
-    
+public class BigliettiIterator implements java.util.Iterator<Biglietto> {
 
     @Override
     public boolean hasNext() {
-       if(PortafoglioSingleton.getInstance().lista.iterator().hasNext()) {return true;}
-       else return false;
+        if (PortafoglioSingleton.getInstance().lista.iterator().hasNext()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
     public Biglietto next() {
-         return PortafoglioSingleton.getInstance().lista.iterator().next();
+        return PortafoglioSingleton.getInstance().lista.iterator().next();
     }
-    
+
 }
-
-

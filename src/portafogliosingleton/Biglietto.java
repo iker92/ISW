@@ -5,7 +5,6 @@
  */
 package portafogliosingleton;
 
-
 public abstract class Biglietto {
-    
+
 }

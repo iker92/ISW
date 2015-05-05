@@ -5,7 +5,6 @@
  */
 package portafogliosingleton;
 
+public class Biglietto90Min extends Biglietto {
 
-public class Biglietto90Min extends Biglietto{
-    
 }

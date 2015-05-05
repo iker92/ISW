@@ -10,8 +10,9 @@ package portafogliosingleton;
  * @author Alessio
  */
 public interface Obliteratrice {
-    
+
     public String Oblitera(Biglietto b);
+
     public void SetNext(Obliteratrice o);
-    
+
 }

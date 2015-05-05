@@ -9,25 +9,30 @@ package portafogliosingleton;
  *
  * @author HP-Paviliong6
  */
-public class CreatoreBigliettiCtm implements AbstractFactoryBiglietti{
+public class CreatoreBigliettiCtm implements AbstractFactoryBiglietti {
+
     public static String min;
-    public Biglietto90Min CreaBiglietto90Min(){
-       
-            return new Biglietto90MinCtm(); }
-    
-    public Biglietto120MinCtm CreaBiglietto120Min(){
-     
-            return new Biglietto120MinCtm(); }
-    
-    public String getMin(String min){
-        this.min=min;
+
+    public Biglietto90Min CreaBiglietto90Min() {
+
+        return new Biglietto90MinCtm();
+    }
+
+    public Biglietto120MinCtm CreaBiglietto120Min() {
+
+        return new Biglietto120MinCtm();
+    }
+
+    public String getMin(String min) {
+        this.min = min;
         return this.min;
-                }
-    
-             public String toString(){
-    
-    return "Biglietto Ctm "+min;
-    
-    };
-           
+    }
+
+    public String toString() {
+
+        return "Biglietto Ctm " + this.min;
+
+    }
+;
+
 }
