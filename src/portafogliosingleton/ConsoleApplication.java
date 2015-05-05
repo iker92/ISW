@@ -11,11 +11,23 @@ import java.lang.*;
 public class ConsoleApplication {
     //ObserverBiglietti observers=new ObserverBiglietti();
    
+    static Obliteratrice o;
+    
+    private static void setChainObliteratrice(){
+    o=new ObliteratriceCTM();
+    o.SetNext(new ObliteratriceARST());
+    
+    }
+    
+    
     public static String ticketMinType;
     public static AbstractFactoryBiglietti fact;
    //public static PortafoglioSingleton PortafoglioSingleton.getInstance()=PortafoglioSingleton.getInstance();
     public static void main(String[] args) {
-        
+    
+    
+ Biglietto b=null;
+ setChainObliteratrice();
         PortafoglioSingleton.getInstance().addObserver(new ObserverBiglietti());
         boolean flag=true;
         while(flag){
@@ -45,7 +57,6 @@ public class ConsoleApplication {
               Scanner scanTicket = new Scanner(System.in);
               ticketMin= scanTicket.nextLine();
              
-              Biglietto b=null;
               if (ticketMin.equals("1")){ 
                    b=fact.CreaBiglietto90Min();
               }
@@ -60,7 +71,7 @@ public class ConsoleApplication {
        
        if(cosaDaleggere.equals("no")){
            
-           System.out.println("1))Visualizzazione biglietti acquistati\n2)Esci");
+           System.out.println("1))Visualizzazione biglietti acquistati\n2)Oblitera\n3)Esci");
             String ticket;
               
               Scanner scanTicket = new Scanner(System.in);
@@ -81,9 +92,21 @@ public class ConsoleApplication {
            PortafoglioSingleton.getInstance().GetIterator120Min();}
        }
        
+       if(ticket.equals("2"))
+       {
+           
+          b=PortafoglioSingleton.getInstance().UtilizzaBiglietto();
+          System.out.println(o.Oblitera(b));
        
-        if (ticket.equals("2"))
-       { flag=false;   }}
+       }
+       
+              
+              
+              
+        if (ticket.equals("3"))
+       { 
+          
+           flag=false;   }}
         
       
                             }

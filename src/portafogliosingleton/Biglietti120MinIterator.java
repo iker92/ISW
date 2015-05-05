@@ -18,8 +18,13 @@ public class Biglietti120MinIterator implements java.util.Iterator<Biglietto>{
 
     @Override
     public boolean hasNext() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (PortafoglioSingleton.getInstance().lista.iterator().hasNext()) {
+        System.out.println("true");
+        return true;} 
+    else return false;
     }
+        
+    
 
     @Override
     public Biglietto next() {

@@ -32,8 +32,9 @@ public class PortafoglioSingleton extends Observable{
        
        public Biglietto UtilizzaBiglietto(){
            
-           
+           try{
            Biglietto b=lista.get(0);
+           
            
            
            //System.out.println(lista.get(0).toString());
@@ -42,7 +43,11 @@ public class PortafoglioSingleton extends Observable{
            setChanged();
            notifyObservers(lista.size());
            
-           return b;
+           return b;}
+       
+           catch(Exception e){
+           System.out.println("Hai finito i biglietti"); 
+           return null;}
        }
        
        public void GetIterator(){
