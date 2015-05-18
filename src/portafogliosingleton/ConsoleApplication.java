@@ -12,7 +12,7 @@ public class ConsoleApplication {
     //ObserverBiglietti observers=new ObserverBiglietti();
 
     static Obliteratrice obliter;
-
+//chain of responsability
     private static void setChainObliteratrice() {
         obliter = new ObliteratriceCTM();
         obliter.SetNext(new ObliteratriceARST());
