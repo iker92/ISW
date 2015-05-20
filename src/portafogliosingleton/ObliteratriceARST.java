@@ -5,18 +5,24 @@
 package portafogliosingleton;
 
 import java.util.Calendar;
+import java.util.Observable;
 
 /**
  *
  * @author Alessio
  */
-public class ObliteratriceARST implements Obliteratrice {
+public class ObliteratriceARST extends Observable implements Obliteratrice {
 
     Obliteratrice next = null;
+    public static int cont=0;
 
     @Override
     public String Oblitera(Biglietto b) {
+        
         if (b instanceof Biglietto90MinArst || b instanceof Biglietto120MinArst) {
+            cont=cont +1;
+            setChanged();
+            notifyObservers(cont);
             Calendar now = Calendar.getInstance();
             return "Arst: " + now.get(Calendar.HOUR_OF_DAY) + ":" + now.get(Calendar.MINUTE);
         }//To change body of generated methods, choose Tools | Templates.

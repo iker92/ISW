@@ -13,9 +13,14 @@ public class ConsoleApplication {
 
     static Obliteratrice obliter;
 //chain of responsability
-    private static void setChainObliteratrice() {
-        obliter = new ObliteratriceCTM();
-        obliter.SetNext(new ObliteratriceARST());
+    private static void setChainObliteratrice(Observer o) {
+        
+        ObliteratriceCTM ctm=new ObliteratriceCTM();
+        ObliteratriceARST arst= new ObliteratriceARST();
+        ctm.addObserver(o);
+        arst.addObserver(o);
+        obliter =ctm;
+        obliter.SetNext(arst);
 
     }
 
@@ -23,10 +28,13 @@ public class ConsoleApplication {
 
     //public static PortafoglioSingleton PortafoglioSingleton.getInstance()=PortafoglioSingleton.getInstance();
     public static void main(String[] args) {
-
+ Observer o=new ObserverObliteratrice();
         Biglietto bigl = null;
-        setChainObliteratrice();
+        setChainObliteratrice(o);
         PortafoglioSingleton.getInstance().addObserver(new ObserverBiglietti());
+       
+        
+        
         boolean flag = true;
         while (flag) {
             System.out.println("1)Vuoi acquistare un biglietto?");
